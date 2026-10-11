@@ -1,338 +1,112 @@
-// ==========================================
-// 1. VARIABILI E SETUP GLOBALE
-// ==========================================
-$font-main: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
-
-// Palette Light (Home & CV)
-$light-bg: #ffffff;
-$light-bg-alt: #f8f8f6;
-$light-text: #1a1a1a;
-$light-border: #e0e0dc;
-$light-muted: #666666;
-
-// Palette Dark (Contatti) - Contrasti Ottimizzati
-$dark-bg: #0f0f0f;
-$dark-card-bg: #181818;
-$dark-text: #ffffff;      // Testo principale
-$dark-text-sub: #d0d0d0;  // Sottotitoli / valori ad alto contrasto
-$dark-border: #2e2e2e;
-$dark-muted: #a0a0a0;     // Etichette ben visibili
-
-// Reset & Base
 *, *::before, *::after {
   box-sizing: border-box;
 }
 
 body {
-  font-family: $font-main;
-  color: $light-text;
-  background-color: $light-bg;
+  font-family: "Plus Jakarta Sans", -apple-system, BlinkMacSystemFont, sans-serif;
+  color: #1a1a1a;
+  background-color: #ffffff;
   line-height: 1.6;
   letter-spacing: 0.01em;
-  padding-left: 16px;
-  padding-right: 16px;
   -webkit-font-smoothing: antialiased;
-
-  &.page-dark, &.bg-dark-theme, &.bg-black {
-    background-color: $dark-bg !important;
-    color: $dark-text !important;
-
-    header, footer, main {
-      background-color: $dark-bg !important;
-      border-color: $dark-border !important;
-    }
-
-    .navbar-brand, .nav-link {
-      color: $dark-text !important;
-    }
-
-    .nav-link.active, .nav-link:hover {
-      opacity: 0.7;
-    }
-  }
 }
 
-// Utility Typography
-.tracking-wider { letter-spacing: 0.12em; }
-.tracking-widest { letter-spacing: 0.22em; }
-
-.text-muted-custom {
-  color: #b0b8c1 !important;
+.tracking-wider {
+  letter-spacing: 0.12em;
 }
 
-.form-label-custom {
-  color: #d1d5db !important;
-  font-weight: 600;
-}
-
-
-// ==========================================
-// 2. NAVBAR & HEADER EDITORIALE
-// ==========================================
-.navbar {
-  .nav-link {
-    font-size: 0.8rem;
-    letter-spacing: 0.08em;
-    text-transform: uppercase;
-
-    &:hover {
-      opacity: 0.6;
-    }
-  }
+.tracking-widest {
+  letter-spacing: 0.22em;
 }
 
 .navbar-editorial {
   padding: 0.75rem 0;
-
-  .nav-box {
-    border: 1px solid $light-border;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.45rem 1rem !important;
-    color: $light-text !important;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    transition: all 0.25s ease-in-out;
-
-    &:hover, &.active {
-      background-color: $light-text;
-      color: #ffffff !important;
-      border-color: $light-text;
-    }
-  }
-
-  .nav-box-dark {
-    border: 1px solid $dark-border;
-    font-size: 0.75rem;
-    font-weight: 500;
-    padding: 0.45rem 1rem !important;
-    color: $dark-text !important;
-    text-transform: uppercase;
-    letter-spacing: 0.08em;
-    transition: all 0.25s ease-in-out;
-
-    &:hover, &.active {
-      background-color: $dark-text;
-      color: $dark-bg !important;
-      border-color: $dark-text;
-    }
-  }
 }
-
-
-// ==========================================
-// 3. HOMEPAGE & HERO SECTION
-// ==========================================
-.hero-section {
-  min-height: 380px;
-  background-color: #ffffff;
-}
-
-.hero-bg-wrapper {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  z-index: 1;
-  pointer-events: none;
-}
-
-.hero-bg-img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center;
-  opacity: 0.35;
-}
-
-.hero-star {
-  font-size: 1rem;
-  color: $light-text;
-}
-
-.hero-title {
-  font-size: clamp(1.6rem, 3.5vw, 2.4rem);
-  font-weight: 400;
-  line-height: 1.25;
-  letter-spacing: 0.04em;
-  color: $light-text;
-}
-
-.hero-bottom-bar {
-  border-color: #e5e5e5 !important;
-  background-color: rgba(255, 255, 255, 0.85);
-  backdrop-filter: blur(4px);
-  font-size: 0.72rem;
-  letter-spacing: 0.08em;
-}
-
-// Bottoni Editorial (con supporto responsive e hover)
-a.btn-editorial,
-.btn-editorial {
-  border: 1px solid $light-text;
-  background: transparent;
-  color: $light-text !important;
+.navbar-editorial .nav-box {
+  border: 1px solid #e0e0dc;
   font-size: 0.75rem;
-  font-weight: 600;
-  letter-spacing: 0.15em;
-  padding: 0.7rem 2rem;
-  border-radius: 0;
-  text-decoration: none !important;
-  display: inline-block;
-  transition: all 0.3s ease;
-
-  &:hover {
-    background: $light-text;
-    color: #ffffff !important;
-    opacity: 1;
-  }
+  font-weight: 500;
+  padding: 0.45rem 1rem !important;
+  color: #1a1a1a !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.25s ease-in-out;
 }
-
-// Cards Servizi
-.max-width-card {
-  max-width: 900px;
+.navbar-editorial .nav-box:hover, .navbar-editorial .nav-box.active {
+  background-color: #1a1a1a;
+  color: #ffffff !important;
+  border-color: #1a1a1a;
 }
-
-.service-card {
-  border-color: #d8d8d8 !important;
-  border-radius: 0;
+.navbar-editorial .nav-box-dark {
+  border: 1px solid #2e2e2e;
+  font-size: 0.75rem;
+  font-weight: 500;
+  padding: 0.45rem 1rem !important;
+  color: #ffffff !important;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  transition: all 0.25s ease-in-out;
+}
+.navbar-editorial .nav-box-dark:hover, .navbar-editorial .nav-box-dark.active {
   background-color: #ffffff;
-
-  &:hover .service-card-img-wrapper img {
-    filter: grayscale(0%);
-  }
+  color: #0f0f0f !important;
+  border-color: #ffffff;
 }
 
-.service-card-title {
-  font-size: 0.82rem;
-  letter-spacing: 0.12em;
-  font-weight: 500;
-  color: $light-text;
-  border-color: #d8d8d8 !important;
-  white-space: nowrap;
+body.bg-dark-theme, .bg-dark-theme {
+  background-color: #0f0f0f !important;
+  color: #ffffff !important;
 }
 
-.service-card-img-wrapper {
-  width: 140px;
-  height: 180px;
-  overflow: hidden;
-  border: 1px solid #eaeaea;
-
-  img {
-    object-fit: cover;
-    filter: grayscale(100%);
-    transition: filter 0.3s ease;
-  }
-}
-
-.service-list-dots li {
-  position: relative;
-  padding-left: 14px;
-  margin-bottom: 6px;
-
-  &::before {
-    content: "•";
-    position: absolute;
-    left: 0;
-    color: $light-text;
-  }
-}
-
-
-// ==========================================
-// 4. PAGINA CURRICULUM (cv.html)
-// ==========================================
-.cv-container {
-  max-width: 860px;
-}
-
-.cv-top-bar {
-  font-size: 0.8rem;
-  letter-spacing: 0.02em;
-  border-color: $light-border !important;
-}
-
-.cv-name {
-  font-size: clamp(2.2rem, 4vw, 3rem);
-  font-weight: 400;
-  letter-spacing: -0.02em;
-  color: $light-text;
-}
-
-.cv-subtitle {
-  font-size: 1.05rem;
-  font-weight: 400;
-  letter-spacing: 0.02em;
-}
-
-.cv-photo {
-  width: 160px;
-  height: 180px;
-  object-fit: cover;
-  display: inline-block;
-}
-
-.cv-section-title {
-  font-size: 0.85rem;
-  font-weight: 500;
-  letter-spacing: 0.05em;
-}
-
-
-// ==========================================
-// 5. PAGINA CONTATTI (contatti.html - TEMA SCURO)
-// ==========================================
 .border-bottom-dark {
-  border-bottom: 1px solid $dark-border !important;
+  border-bottom: 1px solid #2e2e2e !important;
 }
 
 .border-top-dark {
-  border-top: 1px solid $dark-border !important;
+  border-top: 1px solid #2e2e2e !important;
 }
 
 .contact-card-dark {
-  background-color: $dark-card-bg !important;
-  border: 1px solid $dark-border !important;
-  border-radius: 8px;
-
-  .text-muted {
-    color: $dark-muted !important;
-  }
-
-  .text-light {
-    color: $dark-text !important;
-  }
-
-  h1, h2, .h6, p {
-    color: $dark-text;
-  }
+  background-color: #181818 !important;
+  border: 1px solid #2e2e2e !important;
+  border-radius: 4px;
+}
+.contact-card-dark .text-muted {
+  color: #a0a0a0 !important;
+}
+.contact-card-dark .text-light {
+  color: #ffffff !important;
+}
+.contact-card-dark h1, .contact-card-dark h2, .contact-card-dark .h6, .contact-card-dark p {
+  color: #ffffff;
 }
 
-.form-control-dark, body.page-dark .form-control, body.page-dark .form-select {
+.form-control-dark {
   background-color: #121212 !important;
-  border: 1px solid $dark-border !important;
-  color: $dark-text !important;
+  border: 1px solid #2e2e2e !important;
+  color: #ffffff !important;
   border-radius: 0;
   padding: 0.8rem 1rem;
   font-size: 0.88rem;
-
-  &:focus {
-    background-color: #1c1c1c !important;
-    border-color: #ffffff !important;
-    color: #ffffff !important;
-    box-shadow: none;
-  }
-
-  &::placeholder {
-    color: #9ca3af !important;
-    font-size: 0.8rem;
-  }
+}
+.form-control-dark:focus {
+  background-color: #121212 !important;
+  border-color: #ffffff !important;
+  color: #ffffff !important;
+  box-shadow: none;
+}
+.form-control-dark::-moz-placeholder {
+  color: #777777 !important;
+  font-size: 0.8rem;
+}
+.form-control-dark::placeholder {
+  color: #777777 !important;
+  font-size: 0.8rem;
 }
 
 select.form-control-dark option {
-  background-color: $dark-card-bg;
-  color: $dark-text;
+  background-color: #181818;
+  color: #ffffff;
 }
 
 .btn-dark-submit {
@@ -344,89 +118,99 @@ select.form-control-dark option {
   padding: 0.9rem;
   border-radius: 0;
   transition: all 0.3s ease;
-
-  &:hover {
-    background-color: transparent !important;
-    color: #ffffff !important;
-  }
+}
+.btn-dark-submit:hover {
+  background-color: transparent !important;
+  color: #ffffff !important;
 }
 
 .border-dark-box {
-  border: 1px solid $dark-border !important;
-  background-color: $dark-card-bg !important;
-}
-
-.accordion-dark {
-  .accordion-item {
-    background-color: $dark-card-bg !important;
-    border: 1px solid $dark-border !important;
-  }
-
-  .accordion-button {
-    box-shadow: none !important;
-    color: $dark-text !important;
-    font-size: 0.95rem;
-
-    &:not(.collapsed) {
-      background-color: rgba(255, 255, 255, 0.05) !important;
-      color: $dark-text !important;
-    }
-
-    &::after {
-      filter: invert(1);
-    }
-  }
-
-  .accordion-body {
-    color: $dark-text-sub !important;
-    line-height: 1.6;
-  }
-}
-
-
-// ==========================================
-// 6. MEDIA QUERIES RESPONSIVE
-// ==========================================
-@media (max-width: 991.98px) {
-  .navbar-editorial {
-    .navbar-collapse {
-      background: $light-bg;
-      padding: 1rem;
-      border: 1px solid $light-border;
-      margin-top: 0.5rem;
-    }
-  }
-
-  .bg-dark-theme .navbar-editorial .navbar-collapse {
-    background: $dark-card-bg !important;
-    border-color: $dark-border !important;
-  }
-}
-/* ==========================================
-   FIX CONTRASTO FAQ / ACCORDION CONTATTI
-   ========================================== */
-.accordion-dark .accordion-button,
-.accordion-item .accordion-button {
+  border: 1px solid #2e2e2e !important;
   background-color: #181818 !important;
-  color: #ffffff !important;
-  font-weight: 600 !important;
 }
 
-.accordion-dark .accordion-button:not(.collapsed),
-.accordion-item .accordion-button:not(.collapsed) {
-  background-color: #262626 !important;
-  color: #ffffff !important;
+.accordion-dark .accordion-item {
+  background-color: #181818 !important;
+}
+.accordion-dark .accordion-button {
   box-shadow: none !important;
+  color: #ffffff !important;
+  font-size: 0.95rem;
 }
-
-.accordion-dark .accordion-body,
-.accordion-item .accordion-body {
-  background-color: #121212 !important;
-  color: #f0f0f0 !important; /* Testo chiaro ad altissima leggibilità */
-  font-size: 0.92rem;
+.accordion-dark .accordion-button:not(.collapsed) {
+  background-color: rgba(255, 255, 255, 0.03) !important;
+  color: #ffffff !important;
+}
+.accordion-dark .accordion-button::after {
+  filter: invert(1);
+}
+.accordion-dark .accordion-body {
+  color: #d0d0d0 !important;
   line-height: 1.6;
 }
 
-.accordion-button::after {
-  filter: invert(1) !important; /* Mantiene la freccia bianca */
+.cv-container {
+  max-width: 860px;
 }
+
+.cv-top-bar {
+  font-size: 0.8rem;
+  letter-spacing: 0.02em;
+  border-color: #e0e0dc !important;
+}
+
+.cv-name {
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  font-weight: 400;
+  letter-spacing: -0.02em;
+  color: #1a1a1a;
+}
+
+.cv-subtitle {
+  font-size: 1.05rem;
+  font-weight: 400;
+  letter-spacing: 0.02em;
+}
+
+.cv-photo {
+  width: 160px;
+  height: 180px;
+  -o-object-fit: cover;
+     object-fit: cover;
+  display: inline-block;
+}
+
+.cv-section-title {
+  font-size: 0.85rem;
+  font-weight: 500;
+  letter-spacing: 0.05em;
+}
+
+.btn-editorial {
+  border: 1px solid #1a1a1a;
+  background: transparent;
+  color: #1a1a1a;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.15em;
+  padding: 0.7rem 2rem;
+  border-radius: 0;
+  transition: all 0.3s ease;
+}
+.btn-editorial:hover {
+  background: #1a1a1a;
+  color: #ffffff;
+}
+
+@media (max-width: 991.98px) {
+  .navbar-editorial .navbar-collapse {
+    background: #ffffff;
+    padding: 1rem;
+    border: 1px solid #e0e0dc;
+    margin-top: 0.5rem;
+  }
+  .bg-dark-theme .navbar-editorial .navbar-collapse {
+    background: #181818 !important;
+    border-color: #2e2e2e !important;
+  }
+}/*# sourceMappingURL=style.css.map */
